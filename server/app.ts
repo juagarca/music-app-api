@@ -1,13 +1,15 @@
 import express from "express";
 import logger from "morgan";
-import indexRouter from "./routes/index";
+import artistsRouter from "./routes/artists";
+import songsRouter from "./routes/songs";
 
-var app = express();
+const app = express();
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/", indexRouter);
+app.use("/artists", artistsRouter);
+app.use("/songs", songsRouter);
 
 export default app;
