@@ -26,29 +26,13 @@
     "rimraf": "^5.0.5"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.24.6",
     "@types/debug": "^4.1.12",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.13.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "nodemonConfig": {
-    "exec": "ts-node ./server/bin/www",
-    "watch": [
-      "server/*",
-      "public/*"
-    ],
-    "ignore": [
-      "**/__tests__/**",
-      "*.test.js",
-      "*.spec.js"
-    ]
   },
   "jest": {
     "testEnvironment": "node"
