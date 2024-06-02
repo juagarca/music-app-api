@@ -1,8 +1,7 @@
 import express from "express";
 import logger from "morgan";
 
-import artistsRouter from "./routes/artists";
-import songsRouter from "./routes/songs";
+import { artistsRouter, albumsRouter, favouritesRouter } from "./routes";
 
 const app = express();
 
@@ -11,6 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/artists", artistsRouter);
-app.use("/songs", songsRouter);
+app.use("/albums", albumsRouter);
+app.use("/favourites", favouritesRouter);
 
 export default app;
