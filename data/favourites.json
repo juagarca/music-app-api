@@ -1,17 +1,17 @@
 [
   {
     "id": "db1f8578-061f-4e49-a351-cdc30263bc45",
-    "artistId": "10",
-    "userId": "23"
+    "artistId": "623c450c-3ccb-4863-ab89-e886f7346b8c",
+    "userId": "a9257ee7-f5ed-48d9-b93a-76131c9e11b0"
   },
   {
     "id": "b7bd0b54-7d7c-4ccc-89ac-7b0dd383ede0",
-    "artistId": "104",
-    "userId": "23"
+    "artistId": "a9257ee7-f5ed-48d9-b93a-76131c9e11b0",
+    "userId": "9342e3a6-f4c8-4ece-ac94-b0682f2ec603"
   },
   {
-    "id": "cb2ff2af-f6ad-46ac-a753-f6b8628ecd6a",
-    "artistId": "104",
-    "userId": "23"
+    "id": "0a24a2be-5edb-4d06-8a1e-662c21aa817c",
+    "artistId": "a9257ee7-f5ed-48d9-b93a-76131c9e11b0",
+    "userId": "a9257ee7-f5ed-48d9-b93a-76131c9e11b0"
   }
 ]

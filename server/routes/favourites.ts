@@ -6,7 +6,7 @@ import favourites from "../../data/favourites.json";
 const router = express.Router();
 
 router.get("/", (req: Request, res: Response, next: NextFunction) => {
-  const { userId } = req.body;
+  const { userId } = req.query;
   const userFavourites = favourites.filter(
     (favourite) => favourite.userId === userId
   );
