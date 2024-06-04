@@ -3,7 +3,7 @@
     "artistName": "Bonnie McKee",
     "name": "Bonnie Leigh McKee",
     "dateOfBirth": "1984-01-20",
-    "placeOfBirth": "Vacaville, California",
+    "placeOfBirth": "California, USA",
     "bio": "Bonnie McKee is an American singer and songwriter.",
     "members": ["Bonnie McKee"]
   },
@@ -22,5 +22,45 @@
     "placeOfBirth": "Cambridge, UK",
     "bio": "Charlotte Emma Aitchison is a British singer and songwriter.",
     "members": ["Charli XCX"]
+  },
+  {
+    "artistName": "Adam Lambert",
+    "name": "Adam Mitchel Lambert",
+    "dateOfBirth": "1982-01-29",
+    "placeOfBirth": "Indiana, USA",
+    "bio": "Adam Mitchel Lambert is an American singer, songwriter and actor.",
+    "members": ["Adam Lambert"]
+  },
+  {
+    "artistName": "Anitta",
+    "name": "Larissa de Macedo Machado",
+    "dateOfBirth": "1993-03-30",
+    "placeOfBirth": "Rio de Janeiro, Brazil",
+    "bio": "Larissa de Macedo Machado is a Brazilian singer, songwriter, dancer, actress and occasional television host.",
+    "members": ["Anitta"]
+  },
+  {
+    "artistName": "Ava Max",
+    "name": "Amanda Ava Koci",
+    "dateOfBirth": "1994-02-16",
+    "placeOfBirth": "Wisconsin, USA",
+    "bio": "Amanda Ava Koci is an American singer and songwriter.",
+    "members": ["Ava Max"]
+  },
+  {
+    "artistName": "Becky G",
+    "name": "Rebbeca Marie Gomez",
+    "dateOfBirth": "1997-03-02",
+    "placeOfBirth": "California, USA",
+    "bio": "Rebbeca Marie Gomez is an American singer and actress.",
+    "members": ["Becky G"]
+  },
+  {
+    "artistName": "Lauv",
+    "name": "Ari Staprans Leff",
+    "dateOfBirth": "1994-08-08",
+    "placeOfBirth": "California, USA",
+    "bio": "Ari Staprans Leff is an American singer, songwriter and record producer.",
+    "members": ["Lauv"]
   }
 ]

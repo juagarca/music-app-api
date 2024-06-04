@@ -14,6 +14,7 @@ if (!mongoURI) {
 }
 
 mongoose
+  .set("debug", true)
   .connect(mongoURI)
   .then(() => {
     console.log("Successfully connected to MongoDB");

@@ -1,8 +1,17 @@
 import { Document, Model } from "mongoose";
 
+const findItemById = async (Model: Model<any>, id: string) => {
+  try {
+    return await Model.findById(id).select("-__v");
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error fetching item from database");
+  }
+};
+
 const fetchAllItems = async (Model: Model<any>) => {
   try {
-    return await Model.find({}).select("-__v");
+    return await Model.find({}).sort({ artistName: 1 }).select("-__v");
   } catch (error) {
     console.error(error);
     throw new Error("Error fetching items from database");
@@ -41,4 +50,4 @@ const deleteAllItems = async (Model: Model<any>) => {
   }
 };
 
-export { fetchAllItems, saveItem, saveItems, deleteAllItems };
+export { findItemById, fetchAllItems, saveItem, saveItems, deleteAllItems };
