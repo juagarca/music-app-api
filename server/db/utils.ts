@@ -20,14 +20,25 @@ const saveItem = async (item: Document) => {
   }
 };
 
-const deleteAllItems = async (Model: Model<any>) => {
+const saveItems = async (Model: Model<any>, items: Record<string, any>[]) => {
   try {
-    await Model.collection.drop();
-    console.log("Collection dropped");
+    const savedItems = await Model.insertMany(items);
+    console.log("Items saved");
+    return savedItems;
   } catch (error) {
     console.error(error);
-    throw new Error("Error dropping collection");
+    throw new Error("Error saving items to database");
   }
 };
 
-export { fetchAllItems, saveItem, deleteAllItems };
+const deleteAllItems = async (Model: Model<any>) => {
+  try {
+    await Model.deleteMany({});
+    console.log("Records deleted");
+  } catch (error) {
+    console.error(error);
+    throw new Error("Error deleting records");
+  }
+};
+
+export { fetchAllItems, saveItem, saveItems, deleteAllItems };

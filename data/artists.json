@@ -1,0 +1,26 @@
+[
+  {
+    "artistName": "Bonnie McKee",
+    "name": "Bonnie Leigh McKee",
+    "dateOfBirth": "1984-01-20",
+    "placeOfBirth": "Vacaville, California",
+    "bio": "Bonnie McKee is an American singer and songwriter.",
+    "members": ["Bonnie McKee"]
+  },
+  {
+    "artistName": "Darin",
+    "name": "Darin Zanyar",
+    "dateOfBirth": "1987-06-02",
+    "placeOfBirth": "Stockholm, Sweden",
+    "bio": "Darin Zanyar is a Swedish singer and songwriter.",
+    "members": ["Darin"]
+  },
+  {
+    "artistName": "Charli XCX",
+    "name": "Charlotte Emma Aitchison",
+    "dateOfBirth": "1992-08-02",
+    "placeOfBirth": "Cambridge, UK",
+    "bio": "Charlotte Emma Aitchison is a British singer and songwriter.",
+    "members": ["Charli XCX"]
+  }
+]
