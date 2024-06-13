@@ -3,7 +3,7 @@ import logger from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 
-import { artistsRouter, albumsRouter, favouritesRouter } from "./routes";
+import { artistsRouter, followingRouter } from "./routes";
 
 require("dotenv").config();
 
@@ -31,7 +31,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/artists", artistsRouter);
-app.use("/albums", albumsRouter);
-app.use("/favourites", favouritesRouter);
+app.use("/following", followingRouter);
 
 export default app;
