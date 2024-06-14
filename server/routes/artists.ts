@@ -12,6 +12,15 @@ const router = express.Router();
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   if (process.env.NODE_ENV !== "production") {
+    const { query } = req.query;
+    console.log(query);
+
+    if (query) {
+      const artists = artistsData.filter((artist) =>
+        artist.artistName?.toLowerCase().includes(String(query).toLowerCase())
+      );
+      return res.json(artists);
+    }
     return res.json(artistsData);
   }
 
