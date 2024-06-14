@@ -3,25 +3,27 @@ import logger from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 
-import { artistsRouter, followingRouter } from "./routes";
+import { artistsRouter, releasesRouter, tracksRouter } from "./routes";
 
 require("dotenv").config();
 
-const mongoURI = process.env.MONGODB_URI;
+if (process.env.NODE_ENV == "production") {
+  const mongoURI = process.env.MONGODB_URI;
 
-if (!mongoURI) {
-  throw new Error("MONGODB_URI is not defined in environment variables");
+  if (!mongoURI) {
+    throw new Error("MONGODB_URI is not defined in environment variables");
+  }
+
+  mongoose
+    .set("debug", true)
+    .connect(mongoURI)
+    .then(() => {
+      console.log("Successfully connected to MongoDB");
+    })
+    .catch((err) => {
+      console.error("Error connecting to MongoDB:", err);
+    });
 }
-
-mongoose
-  .set("debug", true)
-  .connect(mongoURI)
-  .then(() => {
-    console.log("Successfully connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err);
-  });
 
 const app = express();
 
@@ -31,6 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/artists", artistsRouter);
-app.use("/following", followingRouter);
+app.use("/releases", releasesRouter);
+app.use("/tracks", tracksRouter);
 
 export default app;

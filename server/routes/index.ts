@@ -1,4 +1,5 @@
 import artistsRouter from "./artists";
-import followingRouter from "./following";
+import releasesRouter from "./releases";
+import tracksRouter from "./tracks";
 
-export { artistsRouter, followingRouter };
+export { artistsRouter, releasesRouter, tracksRouter };

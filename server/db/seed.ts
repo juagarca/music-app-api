@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 
 import { saveItems, deleteAllItems } from "./utils";
 import { Artist } from "./models";
-import artists from "../../data/artists.json";
+import { IArtist } from "../types";
+
+import artistsDataJson from "../../data/artists.json";
+const artistsData = artistsDataJson as IArtist[];
 
 require("dotenv").config();
 
@@ -21,7 +24,7 @@ const seedDB = async () => {
     await deleteAllItems(Artist);
 
     console.log("Creating artists");
-    await saveItems(Artist, artists);
+    await saveItems(Artist, artistsData);
   } catch (error) {
     console.error("Error seeding the DB:", error);
   } finally {

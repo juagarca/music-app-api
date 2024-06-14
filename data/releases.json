@@ -1,0 +1,57 @@
+[
+  {
+    "_id": "1",
+    "name": "Moonlight",
+    "artistId": "2",
+    "artistName": "Darin",
+    "type": "SINGLE",
+    "releaseDate": "2024-05-24",
+    "duration": 156,
+    "numberOfTracks": 1,
+    "photoUrl": "https://res.cloudinary.com/dfe3d8qmn/image/upload/fl_preserve_transparency/v1717855442/releases/moonlight.jpg"
+  },
+  {
+    "_id": "2",
+    "name": "BRAT",
+    "artistId": "3",
+    "artistName": "Charli xcx",
+    "type": "ALBUM",
+    "releaseDate": "2024-05-08",
+    "duration": 2523,
+    "numberOfTracks": 15,
+    "photoUrl": "https://res.cloudinary.com/dfe3d8qmn/image/upload/fl_preserve_transparency/v1718129671/releases/charli-xcx-brat_kvpur9.jpg"
+  },
+  {
+    "_id": "3",
+    "name": "LUBE // WET DREAM",
+    "artistId": "4",
+    "artistName": "Adam Lambert",
+    "type": "EP",
+    "releaseDate": "2024-05-31",
+    "duration": 346,
+    "numberOfTracks": 2,
+    "photoUrl": ""
+  },
+  {
+    "_id": "4",
+    "name": "Another Lover",
+    "artistId": "9",
+    "artistName": "VINCINT",
+    "type": "SINGLE",
+    "releaseDate": "2024-05-17",
+    "duration": 183,
+    "numberOfTracks": 1,
+    "photoUrl": ""
+  },
+  {
+    "_id": "5",
+    "name": "Pop 2",
+    "artistId": "3",
+    "artistName": "Charli xcx",
+    "type": "MIXTAPE",
+    "releaseDate": "2017-12-15",
+    "duration": 474,
+    "numberOfTracks": 10,
+    "photoUrl": ""
+  }
+]
