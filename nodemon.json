@@ -1,6 +1,6 @@
 {
-  "watch": ["server"],
-  "ext": "ts",
+  "watch": ["server", "data"],
+  "ext": "ts, json",
   "ignore": ["*.test.ts"],
   "execMap": { "ts": "ts-node" }
 }

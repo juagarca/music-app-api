@@ -3,7 +3,6 @@
     "_id": "1",
     "name": "Moonlight",
     "artistId": "2",
-    "artistName": "Darin",
     "type": "SINGLE",
     "releaseDate": "2024-05-24",
     "duration": 156,
@@ -52,6 +51,15 @@
     "releaseDate": "2017-12-15",
     "duration": 474,
     "numberOfTracks": 10,
+    "photoUrl": ""
+  },
+  {
+    "_id": "6",
+    "name": "CRASH",
+    "artistId": "12",
+    "artistName": "Kehlani",
+    "type": "ALBUM",
+    "releaseDate": "2024-06-21",
     "photoUrl": ""
   }
 ]

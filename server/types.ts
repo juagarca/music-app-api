@@ -15,18 +15,6 @@ interface IFeaturingArtist {
   artistName: string;
 }
 
-interface IRelease {
-  _id: string;
-  name: string;
-  artistId: string;
-  artistName: string;
-  type: "ALBUM" | "EP" | "MIXTAPE" | "SINGLE";
-  releaseDate: string;
-  duration: number;
-  numberOfTracks: number;
-  photoUrl?: string;
-}
-
 interface ITrack {
   _id: string;
   releaseId: string;
@@ -37,4 +25,4 @@ interface ITrack {
   featuring?: IFeaturingArtist[];
 }
 
-export type { IArtist, IFeaturingArtist, IRelease, ITrack };
+export type { IArtist, IFeaturingArtist, ITrack };

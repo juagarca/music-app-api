@@ -13,7 +13,6 @@ const router = express.Router();
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   if (process.env.NODE_ENV !== "production") {
     const { query } = req.query;
-    console.log(query);
 
     if (query) {
       const artists = artistsData.filter((artist) =>
