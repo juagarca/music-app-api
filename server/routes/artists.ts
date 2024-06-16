@@ -23,7 +23,7 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
     return res.json(artistsData);
   }
 
-  res.json(await fetchAllItems(Artist));
+  // res.json(await fetchAllItems(Artist));
 });
 
 router.get(
@@ -35,7 +35,7 @@ router.get(
       return res.json(artistsData.find((artist) => artist._id === artistId));
     }
 
-    res.json(await findItemById(Artist, artistId));
+    // res.json(await findItemById(Artist, artistId));
   }
 );
 
@@ -51,7 +51,7 @@ router.patch(
       if (artist) {
         artist.followed = followed === "true";
         saveToFile("./data/artists.json", artistsData);
-        return res.json(artist);
+        return res.status(204);
       }
       return res.status(404).send();
     }

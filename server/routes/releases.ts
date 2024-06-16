@@ -40,6 +40,7 @@ router.get(
           }
         })
         .filter((release) => release !== null);
+
       return res.json(releasesWithTracks);
     }
   }

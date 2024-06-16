@@ -30,7 +30,7 @@ router.patch(
       if (track) {
         track.listened = listened === "true";
         saveToFile("./data/tracks.json", tracksData);
-        return res.json(track);
+        return res.status(204).send();
       }
       return res.status(404).send();
     }
