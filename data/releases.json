@@ -3,6 +3,7 @@
     "_id": "1",
     "name": "Moonlight",
     "artistId": "2",
+    "artistName": "Darin",
     "type": "SINGLE",
     "releaseDate": "2024-05-24",
     "duration": 156,
@@ -15,7 +16,7 @@
     "artistId": "3",
     "artistName": "Charli xcx",
     "type": "ALBUM",
-    "releaseDate": "2024-05-08",
+    "releaseDate": "2024-06-07",
     "duration": 2523,
     "numberOfTracks": 15,
     "photoUrl": "https://res.cloudinary.com/dfe3d8qmn/image/upload/fl_preserve_transparency/v1718129671/releases/charli-xcx-brat_kvpur9.jpg"
@@ -55,6 +56,15 @@
   },
   {
     "_id": "6",
+    "name": "C,XOXO",
+    "artistId": "13",
+    "artistName": "Camila Cabello",
+    "type": "ALBUM",
+    "releaseDate": "2024-06-28",
+    "photoUrl": ""
+  },
+  {
+    "_id": "7",
     "name": "CRASH",
     "artistId": "12",
     "artistName": "Kehlani",

@@ -10,9 +10,25 @@ interface IArtist {
   followed: boolean;
 }
 
+interface IListRelease extends IRelease {
+  tracks: ITrack[];
+}
+
 interface IFeaturingArtist {
   artistId: string;
   artistName: string;
+}
+
+interface IRelease {
+  _id: string;
+  name: string;
+  artistId: string;
+  artistName: string;
+  type: "ALBUM" | "EP" | "MIXTAPE" | "SINGLE";
+  releaseDate?: string;
+  duration?: number;
+  numberOfTracks?: number;
+  photoUrl?: string;
 }
 
 interface ITrack {
@@ -25,4 +41,4 @@ interface ITrack {
   featuring?: IFeaturingArtist[];
 }
 
-export type { IArtist, IFeaturingArtist, ITrack };
+export type { IArtist, IFeaturingArtist, IListRelease, IRelease, ITrack };
