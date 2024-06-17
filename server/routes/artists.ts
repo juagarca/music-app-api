@@ -51,7 +51,7 @@ router.patch(
       if (artist) {
         artist.followed = followed === "true";
         saveToFile("./data/artists.json", artistsData);
-        return res.status(204);
+        return res.status(204).send();
       }
       return res.status(404).send();
     }
