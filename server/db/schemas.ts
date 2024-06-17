@@ -18,9 +18,15 @@ const artistSchema = new mongoose.Schema(
     bio: {
       type: String,
     },
+    followed: {
+      type: Boolean,
+      default: false,
+    },
     members: {
       type: [String],
-      required: true,
+    },
+    photoUrl: {
+      type: String,
     },
   },
   { timestamps: true }
