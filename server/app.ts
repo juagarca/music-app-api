@@ -3,11 +3,11 @@ import logger from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 
-import { artistsRouter, releasesRouter, tracksRouter } from "./routes";
+import { artistsRouter, releasesRouter } from "./routes";
 
 require("dotenv").config();
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV != "production") {
   const mongoURI = process.env.MONGODB_URI;
 
   if (!mongoURI) {
@@ -34,6 +34,5 @@ app.use(cors());
 
 app.use("/artists", artistsRouter);
 app.use("/releases", releasesRouter);
-app.use("/tracks", tracksRouter);
 
 export default app;

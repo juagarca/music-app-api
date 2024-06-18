@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+const { ObjectId } = mongoose.Schema.Types;
+
 const artistSchema = new mongoose.Schema(
   {
     artistName: {
@@ -39,7 +41,7 @@ const releaseSchema = new mongoose.Schema(
       required: true,
     },
     artistId: {
-      type: String,
+      type: ObjectId,
       required: true,
     },
     artistName: {
@@ -57,54 +59,43 @@ const releaseSchema = new mongoose.Schema(
     duration: {
       type: Number,
     },
-    numberOfTracks: {
-      type: Number,
-    },
     photoUrl: {
       type: String,
     },
-  },
-  { timestamps: true }
-);
-
-const trackSchema = new mongoose.Schema(
-  {
-    releaseId: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    number: {
-      type: Number,
-      required: true,
-    },
-    duration: {
-      type: Number,
-      required: true,
-    },
-    listened: {
-      type: Boolean,
-      default: false,
-    },
-    featuring: {
-      type: [
-        {
-          artistId: {
-            type: String,
-            required: true,
-          },
-          artistName: {
-            type: String,
-            required: true,
-          },
+    tracks: [
+      {
+        name: {
+          type: String,
+          required: true,
         },
-      ],
-    },
+        number: {
+          type: Number,
+          required: true,
+        },
+        duration: {
+          type: Number,
+          required: true,
+        },
+        listened: {
+          type: Boolean,
+          default: false,
+        },
+        featuring: [
+          {
+            artistId: {
+              type: ObjectId,
+              required: true,
+            },
+            artistName: {
+              type: String,
+              required: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   { timestamps: true }
 );
 
-export { artistSchema, releaseSchema, trackSchema };
+export { artistSchema, releaseSchema };

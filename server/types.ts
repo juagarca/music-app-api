@@ -1,39 +1,37 @@
+import { Types } from "mongoose";
+
 interface IArtist {
-  _id: string;
+  _id: Types.ObjectId;
   artistName: string;
   name?: string;
   dateOfBirth?: string;
   placeOfBirth?: string;
   bio?: string;
-  members: string[];
+  members?: string[];
   photoUrl?: string;
   followed: boolean;
 }
 
-interface IListRelease extends IRelease {
-  tracks: ITrack[];
-}
-
 interface IFeaturingArtist {
-  artistId: string;
+  _id: Types.ObjectId;
+  artistId: Types.ObjectId;
   artistName: string;
 }
 
 interface IRelease {
-  _id: string;
+  _id: Types.ObjectId;
   name: string;
-  artistId: string;
+  artistId?: Types.ObjectId;
   artistName: string;
   type: "ALBUM" | "EP" | "MIXTAPE" | "SINGLE";
   releaseDate?: string;
   duration?: number;
-  numberOfTracks?: number;
   photoUrl?: string;
+  tracks?: ITrack[];
 }
 
 interface ITrack {
-  _id: string;
-  releaseId: string;
+  _id: Types.ObjectId;
   name: string;
   number: number;
   duration: number;
@@ -41,4 +39,4 @@ interface ITrack {
   featuring?: IFeaturingArtist[];
 }
 
-export type { IArtist, IFeaturingArtist, IListRelease, IRelease, ITrack };
+export type { IArtist, IFeaturingArtist, IRelease, ITrack };

@@ -1,41 +1,38 @@
 import express, { Request, Response, NextFunction } from "express";
 
-import { fetchAllItems, findItemById } from "../db/utils";
+import {
+  fetchAllItems,
+  fetchItemBy,
+  searchItemsBy,
+  updateItem,
+} from "../db/queries/common";
 import { Artist } from "../db/models";
-import { IArtist } from "../types";
-import { saveToFile } from "../utils";
-
-import artistsDataJson from "../../data/artists.json";
-const artistsData = artistsDataJson as IArtist[];
 
 const router = express.Router();
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
-  if (process.env.NODE_ENV !== "production") {
-    const { query } = req.query;
+  const { query } = req.query;
 
-    if (query) {
-      const artists = artistsData.filter((artist) =>
-        artist.artistName?.toLowerCase().includes(String(query).toLowerCase())
-      );
-      return res.json(artists);
-    }
-    return res.json(artistsData);
+  if (query) {
+    const artists = await searchItemsBy(
+      Artist,
+      "artistName",
+      String(query),
+      "artistName"
+    );
+    return res.json(artists);
   }
 
-  // res.json(await fetchAllItems(Artist));
+  res.json(await fetchAllItems(Artist, "artistName"));
 });
 
 router.get(
   "/:artistId",
   async (req: Request, res: Response, next: NextFunction) => {
     const { artistId } = req.params;
+    const artist = await fetchItemBy(Artist, "_id", artistId);
 
-    if (process.env.NODE_ENV !== "production") {
-      return res.json(artistsData.find((artist) => artist._id === artistId));
-    }
-
-    // res.json(await findItemById(Artist, artistId));
+    return res.json(artist);
   }
 );
 
@@ -44,17 +41,14 @@ router.patch(
   async (req: Request, res: Response, next: NextFunction) => {
     const { artistId } = req.params;
     const { followed } = req.query;
+    const artist = await fetchItemBy(Artist, "_id", artistId);
 
-    if (process.env.NODE_ENV !== "production") {
-      const artist = artistsData.find((artist) => artist._id === artistId);
-
-      if (artist) {
-        artist.followed = followed === "true";
-        saveToFile("./data/artists.json", artistsData);
-        return res.status(204).send();
-      }
-      return res.status(404).send();
+    if (artist) {
+      artist.followed = followed === "true";
+      return res.json(await updateItem(Artist, artist));
     }
+
+    return res.status(404).send();
   }
 );
 
