@@ -25,11 +25,13 @@ const seedDB = async () => {
 
     console.log("Deleting artists");
     await deleteAllItems(Artist);
+
     console.log("Deleting releases");
     await deleteAllItems(Release);
 
     console.log("Creating artists");
     await saveItems(Artist, artistsData);
+
     console.log("Creating releases");
     await saveItems(Release, releasesData);
   } catch (error) {

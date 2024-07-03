@@ -84,7 +84,6 @@ const releaseSchema = new mongoose.Schema(
           {
             artistId: {
               type: ObjectId,
-              required: true,
             },
             artistName: {
               type: String,

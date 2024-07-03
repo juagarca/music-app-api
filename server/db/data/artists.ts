@@ -96,6 +96,8 @@ export default [
     dateOfBirth: "1991-04-05",
     placeOfBirth: "Pennsylvania, USA",
     bio: "Vincint Cannady is an American singer and songwriter.",
+    photoUrl:
+      "https://res.cloudinary.com/dfe3d8qmn/image/upload/v1720026987/fp5krbhr9sncuqvrhtcn.png",
     followed: true,
   },
   {
@@ -105,7 +107,9 @@ export default [
     dateOfBirth: "1987-10-29",
     placeOfBirth: "Stockholm, Sweden",
     bio: "Ebba Tove Elsa Nilsson is a Swedish singer and songwriter.",
-    followed: false,
+    photoUrl:
+      "https://res.cloudinary.com/dfe3d8qmn/image/upload/v1720026822/cgl1gitrihip4nglsfru.png",
+    followed: true,
   },
   {
     _id: new Types.ObjectId(),
@@ -114,7 +118,9 @@ export default [
     dateOfBirth: "1996-01-17",
     placeOfBirth: "Kuopio, Finland",
     bio: "Alma-Sofia Miettinen is a Finnish singer and songwriter.",
-    followed: false,
+    photoUrl:
+      "https://res.cloudinary.com/dfe3d8qmn/image/upload/v1720026404/uzpexg5zz9gf6gfwmczl.png",
+    followed: true,
   },
   {
     _id: new Types.ObjectId(),
@@ -123,6 +129,8 @@ export default [
     dateOfBirth: "1995-04-24",
     placeOfBirth: "California, USA",
     bio: "Kehlani Ashley Parrish is an American singer and songwriter.",
+    photoUrl:
+      "https://res.cloudinary.com/dfe3d8qmn/image/upload/v1720026665/tphaulskwrct9uvlsu9y.png",
     followed: true,
   },
   {
@@ -132,6 +140,8 @@ export default [
     dateOfBirth: "1997-03-03",
     placeOfBirth: "Havana, Cuba",
     bio: "Karla Camila Cabello Estrabao is a Cuban/Mexican/American singer and songwriter.",
+    photoUrl:
+      "https://res.cloudinary.com/dfe3d8qmn/image/upload/v1720026587/zzilp8dzwlx5pqgicrxu.png",
     followed: true,
   },
 ];
