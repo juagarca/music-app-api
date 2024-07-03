@@ -9,8 +9,8 @@ const fetchAllReleases = async (artistId: string) => {
       .sort({ artistId: 1 })
       .select("-__v -createdAt -updatedAt");
   } catch (error) {
-    console.error(error);
-    throw new Error("Error fetching items from database");
+    console.error(`Error fetching items from database, error: ${error}`);
+    return [];
   }
 };
 
@@ -38,8 +38,8 @@ const fetchUnlistenedReleases = async () => {
 
     return releases;
   } catch (error) {
-    console.error("Error fetching releases:", error);
-    throw error;
+    console.error(`Error fetching releases, error: ${error}`);
+    return [];
   }
 };
 
@@ -60,8 +60,8 @@ const updateTrackListened = async (
     console.log("Item updated");
     return updatedItem;
   } catch (error) {
-    console.error(error);
-    throw new Error("Error updating item in database");
+    console.error(`Error updating item in database, error: ${error}`);
+    return null;
   }
 };
 

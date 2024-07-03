@@ -5,8 +5,7 @@ const deleteAllItems = async (Model: Model<any>) => {
     await Model.deleteMany({});
     console.log("Records deleted");
   } catch (error) {
-    console.error(error);
-    throw new Error("Error deleting records");
+    console.error(`Error deleting records, error: ${error}`);
   }
 };
 
@@ -16,8 +15,8 @@ const fetchAllItems = async (Model: Model<any>, sortKey: string) => {
       .sort({ [sortKey]: 1 })
       .select("-__v -createdAt -updatedAt");
   } catch (error) {
-    console.error(error);
-    throw new Error("Error fetching items from database");
+    console.error(`Error fetching items from database, error: ${error}`);
+    return [];
   }
 };
 
@@ -32,8 +31,8 @@ const fetchAllItemsBy = async (
       .sort({ [sortKey]: 1 })
       .select("-__v -createdAt -updatedAt");
   } catch (error) {
-    console.error(error);
-    throw new Error("Error fetching items from database");
+    console.error(`Error fetching items from database, error: ${error}`);
+    return [];
   }
 };
 
@@ -44,8 +43,8 @@ const fetchItemBy = async (Model: Model<any>, key: string, value: string) => {
     );
     return items[0];
   } catch (error) {
-    console.error(error);
-    throw new Error("Error fetching item from database");
+    console.error(`Error fetching item from database, error: ${error}`);
+    return null;
   }
 };
 
@@ -55,8 +54,8 @@ const saveItem = async (item: Document) => {
     console.log("Item saved");
     return savedItem;
   } catch (error) {
-    console.error(error);
-    throw new Error("Error saving item to database");
+    console.error(`Error saving item to database, error: &{error}`);
+    return null;
   }
 };
 
@@ -66,8 +65,8 @@ const saveItems = async (Model: Model<any>, items: Record<string, any>[]) => {
     console.log("Items saved");
     return savedItems;
   } catch (error) {
-    console.error(error);
-    throw new Error("Error saving items to database");
+    console.error(`Error saving items to database, error: &{error}`);
+    return [];
   }
 };
 
@@ -83,8 +82,8 @@ const searchItemsBy = async (
       .sort({ [sortKey]: 1 })
       .select("-__v -createdAt -updatedAt");
   } catch (error) {
-    console.error(error);
-    throw new Error("Error fetching items from database");
+    console.error(`Error fetching items from database, error: ${error}`);
+    return [];
   }
 };
 
@@ -96,8 +95,8 @@ const updateItem = async (Model: Model<any>, item: Document) => {
     console.log("Item updated");
     return updatedItem;
   } catch (error) {
-    console.error(error);
-    throw new Error("Error updating item in database");
+    console.error(`Error updating item in database, error: ${error}`);
+    return null;
   }
 };
 

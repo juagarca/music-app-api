@@ -20,10 +20,15 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
       String(query),
       "artistName"
     );
-    return res.json(artists);
+
+    if (artists.length > 0) return res.json(artists);
+    return res.status(404).send();
   }
 
-  res.json(await fetchAllItems(Artist, "artistName"));
+  const artists = await fetchAllItems(Artist, "artistName");
+
+  if (artists.length > 0) return res.json(artists);
+  return res.status(404).send();
 });
 
 router.get(
@@ -32,7 +37,8 @@ router.get(
     const { artistId } = req.params;
     const artist = await fetchItemBy(Artist, "_id", artistId);
 
-    return res.json(artist);
+    if (artist) return res.json(artist);
+    return res.status(404).send();
   }
 );
 
@@ -45,7 +51,10 @@ router.patch(
 
     if (artist) {
       artist.followed = followed === "true";
-      return res.json(await updateItem(Artist, artist));
+      const updatedItem = await updateItem(Artist, artist);
+
+      if (updatedItem) return res.json(updateItem);
+      return res.status(422).send();
     }
 
     return res.status(404).send();

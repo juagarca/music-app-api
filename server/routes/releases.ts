@@ -13,8 +13,10 @@ const router = express.Router({ mergeParams: true });
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   const { artistId } = req.query;
+  const releases = await fetchAllReleases(String(artistId));
 
-  return res.json(await fetchAllReleases(String(artistId)));
+  if (releases.length > 0) return res.json(releases);
+  return res.status(404).send();
 });
 
 router.get(
