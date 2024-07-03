@@ -12,7 +12,7 @@
     "clean": "rimraf dist-server",
     "watch:dev": "nodemon",
     "test": "jest",
-    "seed": "ts-node-esm ./server/db/seed.ts"
+    "seed": "npx ts-node ./server/db/seed"
   },
   "dependencies": {
     "@babel/cli": "^7.24.5",
